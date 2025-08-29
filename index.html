@@ -3,29 +3,22 @@
 <head>
   <title>Scrolls and Crowns Wiki</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background: #f4f4f4; /* light gray background */
-    }
-    .container {
-      max-width: 1200px;   /* adjust width of the iframe area */
-      margin: 0 auto;      /* centers the iframe horizontally */
-      padding: 20px;       /* space around iframe */
+      height: 100%;
+      overflow: hidden; /* hide outer scrollbar */
     }
     iframe {
       border: none;
-      width: 100%;         /* iframe fills the container */
-      height: 90vh;        /* almost full viewport height */
-      box-shadow: 0 0 10px rgba(0,0,0,0.15); /* optional shadow */
-      border-radius: 12px; /* optional rounded corners */
+      width: 100%;
+      height: 100vh; /* take entire viewport */
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <iframe src="https://scrollsandcrowns.notion.site/ebd/25ec9f4c34728067ab48f78330e95388?v=25ec9f4c3472800b8ce2000cfe03a31a" width="100%" height="600" frameborder="0" allowfullscreen />
-  </div>
+  <p>Scrolls & Crowns</p>
+  <iframe src="https://scrollsandcrowns.notion.site/ebd/25ec9f4c34728067ab48f78330e95388?v=25ec9f4c3472800b8ce2000cfe03a31a" width="100%" height="600" frameborder="0" allowfullscreen />
 </body>
 </html>
 
