@@ -33,3 +33,17 @@ h1, h2, h3, h4, h5, h6 {
   color: #0b0080;            /* Wikipedia's visited link color */
   text-decoration: none;     /* no underline even if visited */
 }
+
+footer {
+  background: #fff;
+  border-top: 1px solid #ccc; /* grey line on top */
+}
+
+footer h6 {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
