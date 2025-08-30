@@ -1,22 +1,18 @@
+/* Global text */
 body {
   background: #f9f7f1;
   font-family: Georgia, serif;
   color: #222;
 }
 
-/* Simple wiki-like links for the nav */
-.simple-nav .nav-link {
-  color: #0645ad;        /* classic blue */
-  padding: 4px 0;
-}
-.simple-nav .nav-link:hover {
-  text-decoration: underline;
-  color: #0b0080;
+/* Simple wiki-like nav links */
+.simple-nav a {
+  color: #0645ad;       /* classic wiki blue */
+  text-decoration: none;
+  padding: 2px 0;
 }
 
-/* Frame the content column on larger screens */
-@media (min-width: 768px) {
-  .border-start {
-    border-color: #d4c5a5 !important;
-  }
+.simple-nav a:hover {
+  text-decoration: underline;  /* underline only text */
+  color: #0b0080;              /* darker blue on hover */
 }
