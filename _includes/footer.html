@@ -1,10 +1,27 @@
-<footer class="bg-dark text-light text-center py-3 mt-5">
+<footer class="footer mt-5 pt-3 border-top">
   <div class="container">
-    <p class="mb-1">© {{ site.title }} {{ site.time | date: '%Y' }}</p>
-    <p class="small">
-      Built with <a href="https://jekyllrb.com/" class="text-warning text-decoration-none">Jekyll</a> 
-      and <a href="https://getbootstrap.com/" class="text-warning text-decoration-none">Bootstrap</a>
-      by <b>Noah Miller</b>
-    </p>
+    <div class="row text-muted small">
+      <div class="col-md-4 mb-3">
+        <h6 class="fw-bold">About</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-muted text-decoration-none">Project Info</a></li>
+          <li><a href="#" class="text-muted text-decoration-none">Authors</a></li>
+          <li><a href="#" class="text-muted text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h6 class="fw-bold">Explore</h6>
+        <ul class="list-unstyled">
+          <li><a href="{{ '/characters/' | relative_url }}" class="text-muted text-decoration-none">Characters</a></li>
+          <li><a href="{{ '/places/' | relative_url }}" class="text-muted text-decoration-none">Places</a></li>
+          <li><a href="{{ '/artifacts/' | relative_url }}" class="text-muted text-decoration-none">Artifacts</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h6 class="fw-bold">Credits</h6>
+        <p>© {{ site.title }} {{ site.time | date: '%Y' }}</p>
+        <p>Built with <a href="https://jekyllrb.com/" class="text-muted text-decoration-none">Jekyll</a> + <a href="https://getbootstrap.com/" class="text-muted text-decoration-none">Bootstrap</a></p>
+      </div>
+    </div>
   </div>
 </footer>
