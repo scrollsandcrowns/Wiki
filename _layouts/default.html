@@ -8,28 +8,26 @@
   <link href="{{ '/assets/css/site.css' | relative_url }}" rel="stylesheet">
 </head>
 <body>
-  <!-- Simple top nav -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="{{ '/' | relative_url }}">📜 Scrolls & Crowns</a>
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="{{ '/' | relative_url }}">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ '/characters/' | relative_url }}">Characters</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ '/places/' | relative_url }}">Places</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ '/artifacts/' | relative_url }}">Artifacts</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ '/lore/' | relative_url }}">Lore</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ '/timeline/' | relative_url }}">Timeline</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Content container with borders -->
   <div class="container my-4">
     <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10 border-start border-end bg-white p-4">
+      
+      <!-- Left nav column -->
+      <aside class="col-lg-3 col-md-4 mb-4">
+        <div class="list-group">
+          <a href="{{ '/' | relative_url }}" class="list-group-item list-group-item-action">🏠 Home</a>
+          <a href="{{ '/characters/' | relative_url }}" class="list-group-item list-group-item-action">👤 Characters</a>
+          <a href="{{ '/places/' | relative_url }}" class="list-group-item list-group-item-action">🌍 Places</a>
+          <a href="{{ '/artifacts/' | relative_url }}" class="list-group-item list-group-item-action">⚔️ Artifacts</a>
+          <a href="{{ '/lore/' | relative_url }}" class="list-group-item list-group-item-action">📜 Lore</a>
+          <a href="{{ '/timeline/' | relative_url }}" class="list-group-item list-group-item-action">📅 Timeline</a>
+        </div>
+      </aside>
+
+      <!-- Right content column -->
+      <main class="col-lg-7 col-md-8 border-start ps-4 bg-white">
         <h1>{{ page.title }}</h1>
         {{ content }}
-      </div>
+      </main>
     </div>
   </div>
 
