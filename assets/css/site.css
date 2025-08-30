@@ -1,60 +1,21 @@
-/* Example: Custom background + font */
 body {
-  background-color: #f9f7f1;
+  background: #f9f7f1;
   font-family: Georgia, serif;
   color: #222;
 }
 
-/* Example: Navbar tweaks */
-.navbar-brand {
-  font-weight: bold;
+/* Simple nav style */
+.simple-nav .nav-link {
+  color: #0645ad;        /* classic wiki blue */
+  padding: 4px 0;
 }
-.nav-link.active,
-.nav-link:hover {
+.simple-nav .nav-link:hover {
   text-decoration: underline;
-  color: #f0e68c !important; /* overrides Bootstrap's default */
+  color: #0b0080;        /* darker on hover */
 }
 
-/* Example: Card tweaks */
-.card {
-  border: 1px solid #d4c5a5;
-}
-
-footer {
-  font-family: Georgia, serif;
-}
-footer a:hover {
-  text-decoration: underline;
-}
-
-nav {
-  font-family: Georgia, serif;
-}
-nav .nav-link {
-  color: #333;
-}
-nav .nav-link:hover {
-  background: #eaeaea;
-  text-decoration: none;
-}
-
+/* Content area */
 h1, h2, h3 {
   font-family: "Merriweather", Georgia, serif;
   color: #3a2c1b;
-}
-
-.navbar-brand {
-  font-weight: bold;
-}
-
-.border-start, .border-end {
-  border-color: #d4c5a5 !important; /* parchment-style border */
-}
-
-.list-group-item {
-  border: none;
-  border-radius: 0;
-}
-.list-group-item:hover {
-  background-color: #f0e6d2;
 }
