@@ -8,28 +8,29 @@
   <link href="{{ '/assets/css/site.css' | relative_url }}" rel="stylesheet">
 </head>
 <body>
-  <div class="container my-4">
-    <div class="row justify-content-center">
-      
-      <!-- Left nav column -->
-      <aside class="col-lg-3 col-md-4 mb-4">
-        <nav class="nav flex-column simple-nav">
-          <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
-          <a class="nav-link" href="{{ '/characters/' | relative_url }}">Characters</a>
-          <a class="nav-link" href="{{ '/places/' | relative_url }}">Places</a>
-          <a class="nav-link" href="{{ '/artifacts/' | relative_url }}">Artifacts</a>
-          <a class="nav-link" href="{{ '/lore/' | relative_url }}">Lore</a>
-          <a class="nav-link" href="{{ '/timeline/' | relative_url }}">Timeline</a>
-        </nav>
-      </aside>
+  
+<div class="container my-4">
+  <div class="row justify-content-center">
+    
+    <!-- Left nav column (narrower) -->
+    <aside class="col-lg-2 col-md-3 mb-4">
+      <nav class="nav flex-column simple-nav">
+        <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
+        <a class="nav-link" href="{{ '/characters/' | relative_url }}">Characters</a>
+        <a class="nav-link" href="{{ '/places/' | relative_url }}">Places</a>
+        <a class="nav-link" href="{{ '/artifacts/' | relative_url }}">Artifacts</a>
+        <a class="nav-link" href="{{ '/lore/' | relative_url }}">Lore</a>
+        <a class="nav-link" href="{{ '/timeline/' | relative_url }}">Timeline</a>
+      </nav>
+    </aside>
 
-      <!-- Right content column -->
-      <main class="col-lg-7 col-md-8 border-start ps-4 bg-white">
-        <h1>{{ page.title }}</h1>
-        {{ content }}
-      </main>
-    </div>
+    <!-- Right content column (wider) -->
+    <main class="col-lg-8 col-md-9 border-start ps-4 bg-white">
+      <h1>{{ page.title }}</h1>
+      {{ content }}
+    </main>
   </div>
+</div>
 
   {% include footer.html %}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
