@@ -25,3 +25,14 @@ footer {
 footer a:hover {
   text-decoration: underline;
 }
+
+nav {
+  font-family: Georgia, serif;
+}
+nav .nav-link {
+  color: #333;
+}
+nav .nav-link:hover {
+  background: #eaeaea;
+  text-decoration: none;
+}
