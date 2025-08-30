@@ -1,4 +1,7 @@
-title: "Scrolls and Crowns"
-logo: /assets/img/logo.png
+title: "Scrolls & Crowns"
 description: "Faunadia Wiki"
-theme: jekyll-theme-minimal
+# Important for correct links; change URL to your user site:
+url: "https://scrollsandcrowns.github.io"
+baseurl: ""      # keep empty for user site
+markdown: kramdown
+plugins: []      # no plugins
