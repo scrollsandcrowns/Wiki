@@ -15,14 +15,21 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
 }
 
-/* Links (Wikipedia style) */
+/* Normal state */
 .simple-nav a {
-  color: #0645ad;
-  text-decoration: none;
+  color: #0645ad;          /* Wikipedia blue */
+  text-decoration: none;   /* no underline */
   padding: 2px 0;
 }
 
+/* Hover */
 .simple-nav a:hover {
-  text-decoration: underline;
-  color: #3366bb;
+  text-decoration: underline; /* only underline on hover */
+  color: #3366bb;             /* lighter blue */
+}
+
+/* Visited (force no underline) */
+.simple-nav a:visited {
+  color: #0b0080;            /* Wikipedia's visited link color */
+  text-decoration: none;     /* no underline even if visited */
 }
