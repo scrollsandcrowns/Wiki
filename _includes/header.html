@@ -2,8 +2,10 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ '/' | relative_url }}">📜 Scrolls & Crowns</a>
     <nav class="d-flex gap-3">
-      <a class="nav-link text-white" href="{{ '/' | relative_url }}">Home</a>
-      <a class="nav-link text-white" href="{{ '/characters/' | relative_url }}">Characters</a>
+      <a class="nav-link text-white {% if page.url == '/' %}fw-bold text-decoration-underline{% endif %}"
+         href="{{ '/' | relative_url }}">Home</a>
+      <a class="nav-link text-white {% if page.url == '/characters/' %}fw-bold text-decoration-underline{% endif %}"
+         href="{{ '/characters/' | relative_url }}">Characters</a>
     </nav>
   </div>
 </header>
