@@ -2,6 +2,7 @@
 body {
   background-color: #f9f7f1;
   font-family: Georgia, serif;
+  color: #222;
 }
 
 /* Example: Navbar tweaks */
@@ -36,3 +37,17 @@ nav .nav-link:hover {
   background: #eaeaea;
   text-decoration: none;
 }
+
+h1, h2, h3 {
+  font-family: "Merriweather", Georgia, serif;
+  color: #3a2c1b;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.border-start, .border-end {
+  border-color: #d4c5a5 !important; /* parchment-style border */
+}
+
