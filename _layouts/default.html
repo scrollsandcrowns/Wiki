@@ -32,13 +32,13 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <nav class="nav flex-column simple-nav">
-        <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
-        <a class="nav-link" href="{{ '/characters/' | relative_url }}">Characters</a>
-        <a class="nav-link" href="{{ '/places/' | relative_url }}">Places</a>
-        <a class="nav-link" href="{{ '/artifacts/' | relative_url }}">Artifacts</a>
-        <a class="nav-link" href="{{ '/lore/' | relative_url }}">Lore</a>
-        <a class="nav-link" href="{{ '/timeline/' | relative_url }}">Timeline</a>
+      <nav class="simple-nav d-flex flex-column">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/characters/' | relative_url }}">Characters</a>
+        <a href="{{ '/places/' | relative_url }}">Places</a>
+        <a href="{{ '/artifacts/' | relative_url }}">Artifacts</a>
+        <a href="{{ '/lore/' | relative_url }}">Lore</a>
+        <a href="{{ '/timeline/' | relative_url }}">Timeline</a>
       </nav>
     </div>
   </div>
@@ -47,13 +47,13 @@
     <div class="row justify-content-center">
       <!-- Left sidebar nav (visible md+ only) -->
       <aside class="col-lg-2 col-md-3 mb-4 d-none d-md-block">
-        <nav class="nav flex-column simple-nav">
-          <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
-          <a class="nav-link" href="{{ '/characters/' | relative_url }}">Characters</a>
-          <a class="nav-link" href="{{ '/places/' | relative_url }}">Places</a>
-          <a class="nav-link" href="{{ '/artifacts/' | relative_url }}">Artifacts</a>
-          <a class="nav-link" href="{{ '/lore/' | relative_url }}">Lore</a>
-          <a class="nav-link" href="{{ '/timeline/' | relative_url }}">Timeline</a>
+        <nav class="simple-nav d-flex flex-column">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/characters/' | relative_url }}">Characters</a>
+          <a href="{{ '/places/' | relative_url }}">Places</a>
+          <a href="{{ '/artifacts/' | relative_url }}">Artifacts</a>
+          <a href="{{ '/lore/' | relative_url }}">Lore</a>
+          <a href="{{ '/timeline/' | relative_url }}">Timeline</a>
         </nav>
       </aside>
 
