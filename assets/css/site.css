@@ -5,14 +5,14 @@ body {
   color: #222;
 }
 
-/* Simple wiki-like nav links */
+/* Wiki-like nav links */
 .simple-nav a {
-  color: #0645ad;       /* classic wiki blue */
-  text-decoration: none;
+  color: #0645ad;           /* classic wiki blue */
+  text-decoration: none;    /* remove underline by default */
   padding: 2px 0;
 }
 
 .simple-nav a:hover {
-  text-decoration: underline;  /* underline only text */
-  color: #0b0080;              /* darker blue on hover */
+  text-decoration: underline; /* underline only on hover */
+  color: #0b0080;             /* darker blue on hover */
 }
