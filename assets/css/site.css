@@ -1,0 +1,20 @@
+/* Example: Custom background + font */
+body {
+  background-color: #f9f7f1;
+  font-family: Georgia, serif;
+}
+
+/* Example: Navbar tweaks */
+.navbar-brand {
+  font-weight: bold;
+}
+.nav-link.active,
+.nav-link:hover {
+  text-decoration: underline;
+  color: #f0e68c !important; /* overrides Bootstrap's default */
+}
+
+/* Example: Card tweaks */
+.card {
+  border: 1px solid #d4c5a5;
+}
