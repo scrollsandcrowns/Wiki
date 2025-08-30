@@ -4,18 +4,19 @@ body {
   color: #222;
 }
 
-/* Simple nav style */
+/* Simple wiki-like links for the nav */
 .simple-nav .nav-link {
-  color: #0645ad;        /* classic wiki blue */
+  color: #0645ad;        /* classic blue */
   padding: 4px 0;
 }
 .simple-nav .nav-link:hover {
   text-decoration: underline;
-  color: #0b0080;        /* darker on hover */
+  color: #0b0080;
 }
 
-/* Content area */
-h1, h2, h3 {
-  font-family: "Merriweather", Georgia, serif;
-  color: #3a2c1b;
+/* Frame the content column on larger screens */
+@media (min-width: 768px) {
+  .border-start {
+    border-color: #d4c5a5 !important;
+  }
 }
