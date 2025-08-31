@@ -9,13 +9,17 @@
 </head>
 <body>
 
+  <!-- full-width topbar + offcanvas nav -->
   {% include navside.html %}
 
+  <!-- main container -->
   <div class="container my-4">
     <div class="row justify-content-center">
-      {% comment %} Sidebar is already inside navside.html {% endcomment %}
 
-      <!-- Main content -->
+      <!-- left sidebar comes from navside.html -->
+      {% include navside.html %}
+
+      <!-- main content -->
       <main class="col-lg-8 col-md-9 ps-md-4">
         {{ content }}
       </main>
