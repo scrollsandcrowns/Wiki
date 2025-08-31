@@ -18,21 +18,3 @@
     {% endfor %}
   </ol>
 </nav>
-
-<style>
-  .breadcrumb {
-    list-style: none;
-    display: flex;
-    gap: .5rem;
-    padding: 0;
-    margin: 0;
-    font-size: 0.9rem;
-  }
-  .breadcrumb li::after {
-    content: "›";
-    margin-left: .5rem;
-  }
-  .breadcrumb li:last-child::after {
-    content: "";
-  }
-</style>
