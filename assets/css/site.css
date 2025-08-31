@@ -1,14 +1,14 @@
 body {
   background: #f9f7f1;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #202122;   /* Wikipedia gray */
+  color: #202122;
   line-height: 1.6;
-  font-size: 0.95rem; /* slightly smaller like Wikipedia */
+  font-size: 0.95rem;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: inherit; /* keep the same sans-serif */
+  font-family: inherit;
   font-weight: bold;
   color: #202122;
   margin-top: 1.2em;
@@ -17,26 +17,26 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Normal state */
 .simple-nav a {
-  color: #0645ad;          /* Wikipedia blue */
-  text-decoration: none;   /* no underline */
+  color: #0645ad;          
+  text-decoration: none; 
   padding: 2px 0;
 }
 
 /* Hover */
 .simple-nav a:hover {
-  text-decoration: underline; /* only underline on hover */
-  color: #3366bb;             /* lighter blue */
+  text-decoration: underline; 
+  color: #3366bb;             
 }
 
 /* Visited (force no underline) */
 .simple-nav a:visited {
-  color: #0b0080;            /* Wikipedia's visited link color */
-  text-decoration: none;     /* no underline even if visited */
+  color: #0b0080;            
+  text-decoration: none;     
 }
 
 footer {
   background: #fff;
-  border-top: 1px solid #ccc; /* grey line on top */
+  border-top: 1px solid #ccc; 
 }
 
 footer h6 {
