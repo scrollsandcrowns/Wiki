@@ -8,6 +8,12 @@
          alt="{{ site.title }}">
     </a>
   </div>
+
+  <div class="sidebar-section">
+  <h3>Search</h3>
+  <input type="text" id="search-input" placeholder="Search...">
+  <ul id="results"></ul>
+</div>
   
   <nav class="simple-nav d-flex flex-column">
     <a href="{{ '/characters/' | relative_url }}">Characters</a>
@@ -19,9 +25,3 @@
     <a href="{{ '/maps/' | relative_url }}">Maps</a>
   </nav>
 </aside>
-
-<div class="sidebar-section">
-  <h3>Search</h3>
-  <input type="text" id="search-input" placeholder="Search...">
-  <ul id="results"></ul>
-</div>
