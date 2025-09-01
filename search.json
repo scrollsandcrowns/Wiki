@@ -2,14 +2,17 @@
 layout: null
 permalink: /search.json
 ---
-{%- assign pages = site.pages | where_exp: "p", "p.url != '/search.json'" -%}
-{%- assign docs = site.posts | concat: pages -%}
+
+{%- assign pages_to_index = site.pages | where_exp: "p", "p.title" -%}
+{%- assign docs = site.posts | concat: pages_to_index -%}
 [
 {%- for doc in docs -%}
+  {%- if doc.title and doc.layout != nil and doc.url != "/search.json" and doc.url contains '.html' or doc.url == "/" -%}
   {
-    "title": {{ (doc.title | default: doc.name) | jsonify }},
+    "title": {{ doc.title | jsonify }},
     "url": {{ doc.url | relative_url | jsonify }},
-    "content": {{ doc.content | strip_html | jsonify }}
+    "content": {{ doc.content | strip_html | strip_newlines | normalize_whitespace | jsonify }}
   }{% unless forloop.last %},{% endunless %}
+  {%- endif -%}
 {%- endfor -%}
 ]
