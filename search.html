@@ -6,17 +6,34 @@ permalink: /search/
 
 <h1>Search</h1>
 
-<input type="text" id="search-input" placeholder="Type to search..." aria-label="Search">
+<form id="search-form">
+  <input type="text" id="search-input" placeholder="Type keyword..." aria-label="Search">
+  <button type="submit">Search</button>
+</form>
+
 <ul id="results"></ul>
 
-<!-- Simple-Jekyll-Search -->
 <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
 <script>
-SimpleJekyllSearch({
-  searchInput: document.getElementById('search-input'),
-  resultsContainer: document.getElementById('results'),
-  json: '{{ "/search.json" | relative_url }}',
-  searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
-  noResultsText: 'No results found'
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('search-input');
+  const resultsContainer = document.getElementById('results');
+  const searchForm = document.getElementById('search-form');
+
+  SimpleJekyllSearch({
+    searchInput: searchInput,
+    resultsContainer: resultsContainer,
+    json: '{{ "/search.json" | relative_url }}',
+    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+    noResultsText: 'No results found',
+    searchResultLimit: 50
+  });
+
+  // Optional: allow search button click
+  searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const event = new Event('input', { bubbles: true });
+    searchInput.dispatchEvent(event);
+  });
 });
 </script>
