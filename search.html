@@ -6,43 +6,6 @@ permalink: /search/
 
 <h1>Search</h1>
 
-<input type="text" id="search-input" placeholder="Type keyword..." aria-label="Search">
-<ul id="results">
-  <li data-title="Home" data-url="/">Home</li>
-  <li data-title="Babeloom" data-url="/places/babeloom">Babeloom</li>
-  <li data-title="Maple" data-url="/characters/maple">Maple</li>
-  <li data-title="Characters" data-url="/characters/">Characters</li>
-  <li data-title="Places" data-url="/places/">Places</li>
-  <li data-title="Siam" data-url="/characters/siam">Siam</li>
-</ul>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const input = document.getElementById('search-input');
-  const results = document.getElementById('results');
-  const items = Array.from(results.querySelectorAll('li'));
-
-  // Hide all items initially
-  items.forEach(li => li.style.display = 'none');
-
-  input.addEventListener('input', () => {
-    const query = input.value.toLowerCase().trim();
-    let found = false;
-
-    items.forEach(li => {
-      const title = li.dataset.title.toLowerCase();
-      if(title.includes(query) && query !== '') {
-        li.style.display = '';
-        li.innerHTML = `<a href="${li.dataset.url}">${li.dataset.title}</a>`;
-        found = true;
-      } else {
-        li.style.display = 'none';
-      }
-    });
-
-    if(!found && query !== '') {
-      results.innerHTML = '<li>No results found</li>';
-    }
-  });
-});
+<script async src="https://cse.google.com/cse.js?cx=655c67d8e950b4690">
 </script>
+<div class="gcse-search"></div>
