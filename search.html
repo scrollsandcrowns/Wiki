@@ -1,60 +1,19 @@
----
-layout: default
-title: Search
-permalink: /search/
----
-
-<h1>Search</h1>
-
-<input id="search-input" type="text" placeholder="Type to search..." aria-label="Search">
-<ul id="results"></ul>
-
-<!-- Lunr + logic -->
-<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" defer></script>
-<script defer>
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+<script>
 document.addEventListener('DOMContentLoaded', async () => {
-  // 1) Fetch the prebuilt index
   const res = await fetch('{{ "/search.json" | relative_url }}');
-  if (!res.ok) {
-    console.error("Could not load search.json", res.status);
-    return;
-  }
   const docs = await res.json();
+  console.log("Loaded docs:", docs); // 👈 should print array of docs
 
-  // 2) Build Lunr index
   const idx = lunr(function () {
     this.ref("url");
     this.field("title");
-    this.field("content");
     docs.forEach(doc => this.add(doc));
   });
 
-  // 3) Wire the UI
-  const input = document.getElementById('search-input');
-  const resultsList = document.getElementById('results');
+  console.log("Index ready. Try: idx.search('hello')", idx);
 
-  function renderResults(items) {
-    resultsList.innerHTML = '';
-    items.forEach(r => {
-      const doc = docs.find(d => d.url === r.ref);
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="${doc.url}">${doc.title}</a>`;
-      resultsList.appendChild(li);
-    });
-  }
-
-  input.addEventListener('input', () => {
-    const q = input.value.trim();
-    if (q.length === 0) {
-      resultsList.innerHTML = '';
-      return;
-    }
-    const results = idx.search(q);
-    if (results.length === 0) {
-      resultsList.innerHTML = '<li>No results found</li>';
-    } else {
-      renderResults(results);
-    }
-  });
+  // Manual test:
+  console.log(idx.search("hello"));
 });
 </script>
