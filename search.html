@@ -6,34 +6,43 @@ permalink: /search/
 
 <h1>Search</h1>
 
-<form id="search-form">
-  <input type="text" id="search-input" placeholder="Type keyword..." aria-label="Search">
-  <button type="submit">Search</button>
-</form>
+<input type="text" id="search-input" placeholder="Type keyword..." aria-label="Search">
+<ul id="results">
+  <li data-title="Home" data-url="/">Home</li>
+  <li data-title="Babeloom" data-url="/places/babeloom">Babeloom</li>
+  <li data-title="Maple" data-url="/characters/maple">Maple</li>
+  <li data-title="Characters" data-url="/characters/">Characters</li>
+  <li data-title="Places" data-url="/places/">Places</li>
+  <li data-title="Siam" data-url="/characters/siam">Siam</li>
+</ul>
 
-<ul id="results"></ul>
-
-<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const searchInput = document.getElementById('search-input');
-  const resultsContainer = document.getElementById('results');
-  const searchForm = document.getElementById('search-form');
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('results');
+  const items = Array.from(results.querySelectorAll('li'));
 
-  SimpleJekyllSearch({
-    searchInput: searchInput,
-    resultsContainer: resultsContainer,
-    json: '{{ "/search.json" | relative_url }}',
-    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
-    noResultsText: 'No results found',
-    searchResultLimit: 50
-  });
+  // Hide all items initially
+  items.forEach(li => li.style.display = 'none');
 
-  // Optional: allow search button click
-  searchForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const event = new Event('input', { bubbles: true });
-    searchInput.dispatchEvent(event);
+  input.addEventListener('input', () => {
+    const query = input.value.toLowerCase().trim();
+    let found = false;
+
+    items.forEach(li => {
+      const title = li.dataset.title.toLowerCase();
+      if(title.includes(query) && query !== '') {
+        li.style.display = '';
+        li.innerHTML = `<a href="${li.dataset.url}">${li.dataset.title}</a>`;
+        found = true;
+      } else {
+        li.style.display = 'none';
+      }
+    });
+
+    if(!found && query !== '') {
+      results.innerHTML = '<li>No results found</li>';
+    }
   });
 });
 </script>
