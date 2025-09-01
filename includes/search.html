@@ -7,3 +7,41 @@ permalink: /search/
 <h1>Search</h1>
 <input type="text" id="search-input" placeholder="Type to search..." class="search-box">
 <ul id="results"></ul>
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script>
+async function initLunrSearch() {
+  const response = await fetch("{{ '/search.json' | relative_url }}");
+  const docs = await response.json();
+
+  // Build the index
+  const idx = lunr(function () {
+    this.ref("url");
+    this.field("title");
+    this.field("content");
+
+    docs.forEach(doc => this.add(doc));
+  });
+
+  const input = document.getElementById("search-input");
+  const resultsList = document.getElementById("results");
+
+  input.addEventListener("input", () => {
+    const query = input.value;
+    const results = idx.search(query);
+
+    resultsList.innerHTML = "";
+    results.forEach(result => {
+      const doc = docs.find(d => d.url === result.ref);
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="${doc.url}">${doc.title}</a>`;
+      resultsList.appendChild(li);
+    });
+
+    if (results.length === 0 && query.length > 2) {
+      resultsList.innerHTML = "<li>No results found</li>";
+    }
+  });
+}
+initLunrSearch();
+</script>
