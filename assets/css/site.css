@@ -6,6 +6,10 @@ body {
   font-size: 0.95rem;
 }
 
+.bg {
+  background: #f9f7f1;
+}
+
 .article-title {
   font-family: "Linux Libertine", "Georgia", "Times New Roman", serif;
   font-weight: normal;
